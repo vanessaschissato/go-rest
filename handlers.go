@@ -10,7 +10,7 @@ func Authentication(w http.ResponseWriter, r *http.Request) {
 	user := User{
 		Email: "vanessaschissato@gmail.com",
 		Name:  "Vanessa Schissato",
-		Phone: "+55 (11) 9 4187-8106",
+		Phone: "+55 (11) 9 4321-1234",
 	}
 
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
