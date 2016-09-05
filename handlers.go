@@ -1,8 +1,8 @@
 package main
 
 import (
-	"net/http"
 	"encoding/json"
+	"net/http"
 )
 
 func Authentication(w http.ResponseWriter, r *http.Request) {
@@ -13,5 +13,10 @@ func Authentication(w http.ResponseWriter, r *http.Request) {
 		Phone: "+55 (11) 9 4187-8106",
 	}
 
-	json.NewEncoder(w).Encode(user)
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.WriteHeader(http.StatusOK)
+
+	if err := json.NewEncoder(w).Encode(user); err != nil {
+		panic(err)
+	}
 }
